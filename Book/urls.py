@@ -1,0 +1,32 @@
+"""Book URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from core.views import home, login_page, register, add_book, list_books, edit_book, logout_view,my_profile,user_profile
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home, name='home'),
+    path('login/', login_page, name='login'),
+    path('register/', register, name='register'),
+    path('logout/', logout_view, name='logout'),
+    path("add_book/", add_book, name="add_book"),
+    path("list_books/", list_books, name="list_books"),
+    path('edit_book/', edit_book, name='edit_book'),
+    path('my_profile/', my_profile, name='my_profile'),
+    path('user_profile/', user_profile, name='user_profile'),
+]
+

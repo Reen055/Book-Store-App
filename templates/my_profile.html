@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="overflow-x-auto py-6 px-20">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 my-3">
+        My Books 😄
+    </h2>
+    <table class="table w-full">
+        <!-- head -->
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Book Category</th>
+                <th>Book Price</th>
+                <th>Book Pages</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.price }}</td>
+                    <td>{{ book.pages }}</td>
+                    <td>
+                        <ul class="menu menu-horizontal p-0">
+                            <li><a class="btn btn-outline btn-primary mr-3">Edit</a></li>
+                            <li><a class="btn btn-outline btn-secondary" >Delete</a></li>
+                            
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
